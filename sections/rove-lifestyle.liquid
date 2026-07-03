@@ -1,23 +1,60 @@
+{%- comment -%}
+  STOCK PHOTO PLACEHOLDER: the default images below (rove-lifestyle-*.jpg in assets/) are
+  licensed Unsplash stock photos used to show the intended "rather be outside" mood while we
+  wait on real product photography. Replace them with genuine Rove lifestyle shots (the actual
+  cooler pack in use) before launch — either upload real photos via the block's "Image" picker
+  in the theme customizer (which overrides the stock fallback automatically), or swap the
+  asset files in assets/ for real photography using the same filenames.
+{%- endcomment -%}
+
 <div class="rove-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div class="rove-page-width">
     <div class="rove-section__header">
       <span class="rove-waypoint__label">{{ section.settings.waypoint_label | escape }}</span>
       <span class="rove-eyebrow">{{ section.settings.eyebrow | escape }}</span>
-      <h2 class="rove-section__heading-serif">{{ section.settings.heading | escape }}</h2>
+      <h2 class="rove-section__heading-display">{{ section.settings.heading | escape }}</h2>
     </div>
 
     <div class="rove-lifestyle__grid">
       {%- for block in section.blocks -%}
         <div class="rove-lifestyle__item" {{ block.shopify_attributes }}>
           {%- if block.settings.image -%}
+            {%- comment -%} Real photo uploaded by the merchant — takes priority over the stock fallback. {%- endcomment -%}
             <img
               src="{{ block.settings.image | image_url: width: 1200 }}"
               srcset="{{ block.settings.image | image_url: width: 600 }} 600w, {{ block.settings.image | image_url: width: 1200 }} 1200w"
               sizes="(min-width: 750px) 33vw, 100vw"
-              alt="{{ block.settings.image.alt | default: block.settings.caption | escape }}"
+              alt="{{ block.settings.image.alt | default: block.settings.alt | escape }}"
               loading="lazy"
               width="{{ block.settings.image.width }}"
               height="{{ block.settings.image.height }}"
+            >
+          {%- elsif block.settings.stock_image != blank -%}
+            {%- liquid
+              case block.settings.stock_image
+                when 'rove-lifestyle-beach.jpg'
+                  assign stock_w = 1400
+                  assign stock_h = 1750
+                when 'rove-lifestyle-hiking.jpg'
+                  assign stock_w = 1400
+                  assign stock_h = 934
+                when 'rove-lifestyle-camp.jpg'
+                  assign stock_w = 1400
+                  assign stock_h = 2100
+                when 'rove-lifestyle-picnic.jpg'
+                  assign stock_w = 1400
+                  assign stock_h = 933
+                else
+                  assign stock_w = 1400
+                  assign stock_h = 1050
+              endcase
+            -%}
+            <img
+              src="{{ block.settings.stock_image | asset_url }}"
+              alt="{{ block.settings.alt | escape }}"
+              loading="lazy"
+              width="{{ stock_w }}"
+              height="{{ stock_h }}"
             >
           {%- else -%}
             <div class="rove-lifestyle__placeholder" aria-hidden="true">
@@ -68,8 +105,10 @@
       "type": "image",
       "name": "Image",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
-        { "type": "text", "id": "caption", "label": "Caption", "default": "Beach day, cold drinks" }
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Uploading a real photo here overrides the stock placeholder below." },
+        { "type": "text", "id": "stock_image", "label": "Stock placeholder filename", "info": "Asset filename used until a real photo is uploaded above." },
+        { "type": "text", "id": "caption", "label": "Caption" },
+        { "type": "text", "id": "alt", "label": "Alt text" }
       ]
     }
   ],
@@ -77,9 +116,38 @@
     {
       "name": "Rove: Lifestyle",
       "blocks": [
-        { "type": "image", "settings": { "caption": "Beach day, cold drinks" } },
-        { "type": "image", "settings": { "caption": "Trailhead, packed and ready" } },
-        { "type": "image", "settings": { "caption": "Campsite golden hour" } }
+        {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-beach.jpg",
+            "caption": "Beach days, sorted.",
+            "alt": "Friends grilling next to a cooler on the beach at sunset"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-hiking.jpg",
+            "caption": "From boot to trailhead.",
+            "alt": "Two hikers with backpacks walking a mountain trail"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-camp.jpg",
+            "caption": "Cold drinks at camp.",
+            "alt": "A tent glowing at dusk beneath a mountain peak"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-picnic.jpg",
+            "caption": "Park days, no faff.",
+            "alt": "Two friends having a picnic in a sunny field"
+          }
+        }
       ]
     }
   ]

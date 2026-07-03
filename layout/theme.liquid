@@ -15,12 +15,10 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Libre+Caslon+Text:ital@0;1&display=swap"
-    >
+    {%- comment -%} Rove type system: self-hosted WOFF2, preloaded to avoid render-blocking external font requests. {%- endcomment -%}
+    <link rel="preload" as="font" type="font/woff2" href="{{ 'rove-font-clash-display-500.woff2' | asset_url }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ 'rove-font-clash-display-600.woff2' | asset_url }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ 'rove-font-inter-variable.woff2' | asset_url }}" crossorigin>
 
     <title>
       {{ page_title }}

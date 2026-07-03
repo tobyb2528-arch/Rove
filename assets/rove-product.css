@@ -11,9 +11,10 @@
 }
 
 .product__title h1,
-.product__title a {
-  font-family: var(--rove-font-sans);
-  font-weight: 800;
+.product__title a,
+h2.product__title {
+  font-family: var(--rove-font-display);
+  font-weight: 600;
   font-size: clamp(2.8rem, 2.2rem + 1.8vw, 4rem);
   line-height: 1.02;
   letter-spacing: -0.02em;
@@ -21,8 +22,8 @@
 }
 
 .product .price {
-  font-family: var(--rove-font-sans);
-  font-weight: 700;
+  font-family: var(--rove-font-display);
+  font-weight: 600;
   font-size: 2.2rem;
 }
 
@@ -56,8 +57,8 @@
 }
 
 .product__accordion .accordion__title {
-  font-family: var(--rove-font-sans);
-  font-weight: 700;
+  font-family: var(--rove-font-display);
+  font-weight: 600;
   font-size: 1.5rem;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
@@ -84,10 +85,9 @@
   max-width: 56rem;
 }
 
-.rove-section__heading-serif {
-  font-family: var(--rove-font-serif);
-  font-style: italic;
-  font-weight: 400;
+.rove-section__heading-display {
+  font-family: var(--rove-font-display);
+  font-weight: 500;
   font-size: clamp(2.8rem, 2.2rem + 1.6vw, 4.2rem);
   line-height: 1.08;
   margin: 0.4rem 0 0;
@@ -132,8 +132,8 @@
 }
 
 .rove-why__title {
-  font-family: var(--rove-font-sans);
-  font-weight: 700;
+  font-family: var(--rove-font-display);
+  font-weight: 600;
   font-size: 1.7rem;
   margin: 0;
 }
@@ -149,13 +149,13 @@
 
 .rove-lifestyle__grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  grid-template-rows: repeat(2, minmax(16rem, 1fr));
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: repeat(3, minmax(13rem, 1fr));
   gap: var(--rove-space-2);
 }
 
 .rove-lifestyle__grid > :first-child {
-  grid-row: span 2;
+  grid-row: span 3;
 }
 
 @media screen and (max-width: 749px) {
@@ -166,6 +166,10 @@
 
   .rove-lifestyle__grid > :first-child {
     grid-row: auto;
+  }
+
+  .rove-lifestyle__item {
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -224,8 +228,8 @@
 }
 
 .rove-reviews__score {
-  font-family: var(--rove-font-sans);
-  font-weight: 800;
+  font-family: var(--rove-font-display);
+  font-weight: 700;
   font-size: 5rem;
   line-height: 1;
   color: rgb(var(--rove-ink));
@@ -299,9 +303,21 @@
   gap: 1rem;
 }
 
+.rove-review__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .rove-review__stars {
   color: rgb(var(--rove-clay));
   font-size: 1.4rem;
+}
+
+.rove-review__date {
+  font-size: 1.1rem;
+  color: rgba(var(--rove-ink), 0.5);
 }
 
 .rove-review__body {
@@ -309,6 +325,21 @@
   line-height: 1.55;
   color: rgba(var(--rove-ink), 0.85);
   margin: 0;
+}
+
+.rove-review__photo {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+.rove-review__foot {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 0.2rem;
 }
 
 .rove-review__author {
@@ -322,6 +353,9 @@
   font-size: 1.1rem;
   font-weight: 500;
   color: rgb(var(--rove-forest));
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--rove-radius-pill);
+  background: rgba(var(--rove-forest), 0.1);
 }
 
 .rove-reviews__note {

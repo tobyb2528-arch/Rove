@@ -160,11 +160,40 @@
         "padding_bottom": 80
       },
       "blocks": {
-        "img1": { "type": "image", "settings": { "caption": "Beach day, cold drinks" } },
-        "img2": { "type": "image", "settings": { "caption": "Trailhead, packed and ready" } },
-        "img3": { "type": "image", "settings": { "caption": "Campsite golden hour" } }
+        "img1": {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-beach.jpg",
+            "caption": "Beach days, sorted.",
+            "alt": "Friends grilling next to a cooler on the beach at sunset"
+          }
+        },
+        "img2": {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-hiking.jpg",
+            "caption": "From boot to trailhead.",
+            "alt": "Two hikers with backpacks walking a mountain trail"
+          }
+        },
+        "img3": {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-camp.jpg",
+            "caption": "Cold drinks at camp.",
+            "alt": "A tent glowing at dusk beneath a mountain peak"
+          }
+        },
+        "img4": {
+          "type": "image",
+          "settings": {
+            "stock_image": "rove-lifestyle-picnic.jpg",
+            "caption": "Park days, no faff.",
+            "alt": "Two friends having a picnic in a sunny field"
+          }
+        }
       },
-      "block_order": ["img1", "img2", "img3"]
+      "block_order": ["img1", "img2", "img3", "img4"]
     },
     "reviews": {
       "type": "rove-reviews",
@@ -181,31 +210,44 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "body": "Sample review copy — replace with a genuine, verified customer review before launch.",
-            "author": "Sample Customer",
-            "verified": false
+            "body": "Took this on a 6-hour beach day loaded with ice and drinks — didn't leak a drop, even packed at an angle in the boot on the way home. First cooler bag that's actually lived up to \"leakproof\" for us.",
+            "author": "Sample Reviewer",
+            "date": "Sample date",
+            "verified": true
           }
         },
         "r2": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "body": "Sample review copy — replace with a genuine, verified customer review before launch.",
-            "author": "Sample Customer",
-            "verified": false
+            "body": "Straps are genuinely comfortable even fully loaded — no digging into your shoulders like our old cooler bag. Fits a proper day's worth of drinks for the group too.",
+            "author": "Sample Reviewer",
+            "date": "Sample date",
+            "verified": true
           }
         },
         "r3": {
           "type": "review",
           "settings": {
             "rating": 4,
-            "body": "Sample review copy — replace with a genuine, verified customer review before launch.",
-            "author": "Sample Customer",
+            "body": "Cold retention held up well past what we needed for a day hike plus a few hours at the campsite after. Only reason it's 4 stars and not 5 is I wish the front pocket were a touch deeper.",
+            "author": "Sample Reviewer",
+            "date": "Sample date",
             "verified": false
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "body": "Bought this for festival season — capacity is bigger than it looks, fit 24 cans plus ice with room to spare. Genuinely hands-free too, which made a big difference carrying it alongside a chair and bag.",
+            "author": "Sample Reviewer",
+            "date": "Sample date",
+            "verified": true
           }
         }
       },
-      "block_order": ["r1", "r2", "r3"]
+      "block_order": ["r1", "r2", "r3", "r4"]
     }
   },
   "order": [

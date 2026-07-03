@@ -1,4 +1,63 @@
-/* Rove design tokens — earthy/outdoor palette, Archivo + Libre Caslon Text pairing. */
+/* Rove design tokens — earthy/outdoor palette, Clash Display + Inter pairing.
+   Fonts are self-hosted WOFF2 (see @font-face block below) — no external font requests. */
+
+/* Clash Display (Fontshare, self-hosted) — headings, product name, price, logo, CTAs, accordion labels. */
+@font-face {
+  font-family: 'Clash Display';
+  src: url('rove-font-clash-display-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('rove-font-clash-display-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('rove-font-clash-display-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter (Google Fonts, self-hosted variable font) — paragraphs, descriptions, form fields, trust text. */
+@font-face {
+  font-family: 'Inter';
+  src: url('rove-font-inter-variable.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('rove-font-inter-variable.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('rove-font-inter-variable.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('rove-font-inter-variable.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --rove-canvas: 241, 237, 227;       /* Stone Sand — page background */
@@ -10,9 +69,10 @@
   --rove-sage: 140, 155, 124;         /* Sage — dividers, muted UI */
   --rove-white: 255, 255, 255;
 
-  --rove-font-sans:
-    'Archivo', var(--font-body-family, sans-serif), -apple-system, BlinkMacSystemFont, sans-serif;
-  --rove-font-serif: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+  /* Two-font system. Swap either value to re-theme the whole site from one place —
+     e.g. for the "editorial" alternative pairing, set --rove-font-display to Fraunces. */
+  --rove-font-display: 'Clash Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --rove-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --rove-space-1: 0.5rem;
   --rove-space-2: 1rem;
@@ -26,18 +86,23 @@
 }
 
 /* Override Dawn's font choice site-wide with the Rove pairing, without touching the
-   font_picker settings (avoids risk of an invalid Shopify Fonts handle breaking the theme). */
+   font_picker settings (avoids risk of an invalid Shopify Fonts handle breaking the theme).
+   Body font for running text and form fields; display font for headings and buttons. */
 body,
 input,
 select,
-textarea,
-button {
-  font-family: var(--rove-font-sans);
+textarea {
+  font-family: var(--rove-font-body);
+}
+
+button,
+.button {
+  font-family: var(--rove-font-display);
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: var(--rove-font-sans);
+  font-family: var(--rove-font-display);
   letter-spacing: -0.01em;
 }
 
@@ -47,7 +112,7 @@ h1, h2, h3, h4, h5, h6,
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
-  font-family: var(--rove-font-sans);
+  font-family: var(--rove-font-body);
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -63,15 +128,8 @@ h1, h2, h3, h4, h5, h6,
   display: inline-block;
 }
 
-.rove-serif {
-  font-family: var(--rove-font-serif);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
 .rove-section-heading {
-  font-family: var(--rove-font-sans);
+  font-family: var(--rove-font-display);
   font-weight: 700;
   font-size: clamp(2.6rem, 1.9rem + 1.6vw, 3.8rem);
   line-height: 1.05;
@@ -107,7 +165,7 @@ h1, h2, h3, h4, h5, h6,
   width: fit-content;
   align-items: center;
   gap: 0.5em;
-  font-family: var(--rove-font-sans);
+  font-family: var(--rove-font-body);
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.13em;
