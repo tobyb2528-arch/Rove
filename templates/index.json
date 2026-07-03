@@ -9,76 +9,209 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "main": {
+      "type": "featured-product",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "title": {
+          "type": "title",
+          "settings": { "heading_size": "h1" }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "benefit_line": {
+          "type": "custom_liquid",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "custom_liquid": "<p class=\"rove-benefit-line\">An all-day insulated cooler you wear on your back — cold drinks, anywhere the day takes you.</p>"
           }
         },
-        "button": {
-          "type": "buttons",
+        "variant_picker": {
+          "type": "variant_picker",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "tip": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"rove-tip\"><span class=\"rove-tip__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z\"/></svg></span><span><strong>Pro tip:</strong> freeze two water bottles overnight — they double as ice packs and drinks.</span></div>"
+          }
+        },
+        "desc_accordion": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product__accordion accordion\"><details><summary><div class=\"summary__title\">{% render 'icon-accordion', icon: 'clipboard' %}<h2 class=\"h4 accordion__title inline-richtext\">Description</h2></div>{{ 'icon-caret.svg' | inline_asset_content }}</summary><div class=\"accordion__content rte\"><p>The Rove Cooler Pack is an insulated backpack cooler built for the day you actually have planned — the beach, the trail, the festival field. Wear it hands-free, load it with up to 30 cans, and let the sealed, verified leakproof liner do the rest.</p></div></details></div>"
+          }
+        },
+        "specs_accordion": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product__accordion accordion\"><details><summary><div class=\"summary__title\">{% render 'icon-accordion', icon: 'ruler' %}<h2 class=\"h4 accordion__title inline-richtext\">Specifications</h2></div>{{ 'icon-caret.svg' | inline_asset_content }}</summary><div class=\"accordion__content rte\"><ul><li><strong>Capacity:</strong> 30 cans / 30L — enough for a full day out with friends.</li><li><strong>Leakproof liner:</strong> verified sealed lining, so melted ice stays in the bag.</li><li><strong>Carry:</strong> padded, adjustable backpack straps for genuinely hands-free carrying.</li><li><strong>Pockets:</strong> exterior storage for essentials — keys, phone, sunscreen.</li><li><strong>Materials:</strong> durable, weather-ready exterior built for repeat trips.</li></ul></div></details></div>"
+          }
+        },
+        "shipping_accordion": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product__accordion accordion\"><details><summary><div class=\"summary__title\">{% render 'icon-accordion', icon: 'truck' %}<h2 class=\"h4 accordion__title inline-richtext\">Shipping</h2></div>{{ 'icon-caret.svg' | inline_asset_content }}</summary><div class=\"accordion__content rte\"><p>Orders are dispatched within 1–3 business days. UK delivery typically takes 3–7 business days from dispatch. You'll get a tracking link by email as soon as your order ships. Free UK delivery on orders over £40.</p></div></details></div>"
+          }
+        },
+        "returns_accordion": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product__accordion accordion\"><details><summary><div class=\"summary__title\">{% render 'icon-accordion', icon: 'return' %}<h2 class=\"h4 accordion__title inline-richtext\">Returns & Guarantee</h2></div>{{ 'icon-caret.svg' | inline_asset_content }}</summary><div class=\"accordion__content rte\"><p>[RETURNS_POLICY_TBD] — full returns and guarantee terms will be confirmed here before launch. Have a question in the meantime? <a href=\"/pages/contact\">Get in touch</a>.</p></div></details></div>"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "title",
+        "price",
+        "benefit_line",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "tip",
+        "desc_accordion",
+        "specs_accordion",
+        "shipping_accordion",
+        "returns_accordion"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "product": "the-rove-cooler-pack-insulated-30-can-backpack-cooler-leakproof-hands-free",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "why": {
+      "type": "rove-why",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "waypoint_label": "Gear Check",
+        "eyebrow": "Why Rove",
+        "heading": "Built for the day you actually have planned",
+        "color_scheme": "scheme-2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "cold": {
+          "type": "benefit",
+          "settings": {
+            "icon": "cold",
+            "title": "All-Day Cold",
+            "text": "Insulated to keep drinks cold from the first stop to the last, even on a hot day out."
+          }
+        },
+        "leakproof": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leakproof",
+            "title": "Leakproof Liner",
+            "text": "A sealed, verified leakproof liner — melted ice stays in the bag, not in your car."
+          }
+        },
+        "handsfree": {
+          "type": "benefit",
+          "settings": {
+            "icon": "hands-free",
+            "title": "Hands-Free Carry",
+            "text": "Wear it like a backpack so your hands stay free for kids, dogs, or the trail ahead."
+          }
+        },
+        "durable": {
+          "type": "benefit",
+          "settings": {
+            "icon": "durable",
+            "title": "Built to Last",
+            "text": "Durable materials and stitching made for repeat trips, not a single weekend."
+          }
+        }
+      },
+      "block_order": ["cold", "leakproof", "handsfree", "durable"]
+    },
+    "lifestyle": {
+      "type": "rove-lifestyle",
+      "settings": {
+        "waypoint_label": "On the Route",
+        "eyebrow": "Real days out",
+        "heading": "Gear for people who'd rather be outside",
         "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "img1": { "type": "image", "settings": { "caption": "Beach day, cold drinks" } },
+        "img2": { "type": "image", "settings": { "caption": "Trailhead, packed and ready" } },
+        "img3": { "type": "image", "settings": { "caption": "Campsite golden hour" } }
+      },
+      "block_order": ["img1", "img2", "img3"]
+    },
+    "reviews": {
+      "type": "rove-reviews",
+      "settings": {
+        "waypoint_label": "Base Camp",
+        "eyebrow": "From the trail",
+        "heading": "What Weekend Adventurers are saying",
+        "color_scheme": "scheme-1",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "body": "Sample review copy — replace with a genuine, verified customer review before launch.",
+            "author": "Sample Customer",
+            "verified": false
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "body": "Sample review copy — replace with a genuine, verified customer review before launch.",
+            "author": "Sample Customer",
+            "verified": false
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "rating": 4,
+            "body": "Sample review copy — replace with a genuine, verified customer review before launch.",
+            "author": "Sample Customer",
+            "verified": false
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3"]
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "main",
+    "why",
+    "lifestyle",
+    "reviews"
   ]
 }

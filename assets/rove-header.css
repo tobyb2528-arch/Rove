@@ -20,6 +20,13 @@
   letter-spacing: 0.01em;
 }
 
+/* Single-product store: no catalog or homepage to navigate to, so the nav is just
+   logo, search and cart. Hides the inline menu and the mobile drawer trigger. */
+.header__inline-menu,
+.header__icon--menu {
+  display: none !important;
+}
+
 /* Trust strip (announcement bar) */
 .utility-bar .announcement-bar__message {
   font-family: var(--rove-font-sans);
