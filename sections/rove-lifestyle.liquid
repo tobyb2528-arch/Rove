@@ -1,0 +1,87 @@
+<div class="rove-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="rove-page-width">
+    <div class="rove-section__header">
+      <span class="rove-waypoint__label">{{ section.settings.waypoint_label | escape }}</span>
+      <span class="rove-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      <h2 class="rove-section__heading-serif">{{ section.settings.heading | escape }}</h2>
+    </div>
+
+    <div class="rove-lifestyle__grid">
+      {%- for block in section.blocks -%}
+        <div class="rove-lifestyle__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.image -%}
+            <img
+              src="{{ block.settings.image | image_url: width: 1200 }}"
+              srcset="{{ block.settings.image | image_url: width: 600 }} 600w, {{ block.settings.image | image_url: width: 1200 }} 1200w"
+              sizes="(min-width: 750px) 33vw, 100vw"
+              alt="{{ block.settings.image.alt | default: block.settings.caption | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+            >
+          {%- else -%}
+            <div class="rove-lifestyle__placeholder" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 48 22 26l10 12 8-9 18 19Z"/>
+                <circle cx="46" cy="18" r="5"/>
+              </svg>
+            </div>
+          {%- endif -%}
+          {%- if block.settings.caption != blank -%}
+            <span class="rove-lifestyle__caption">{{ block.settings.caption | escape }}</span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Rove: Lifestyle",
+  "class": "rove-lifestyle-section",
+  "settings": [
+    { "type": "text", "id": "waypoint_label", "label": "Waypoint label", "default": "On the Route" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Real days out" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Gear for people who'd rather be outside" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "caption", "label": "Caption", "default": "Beach day, cold drinks" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rove: Lifestyle",
+      "blocks": [
+        { "type": "image", "settings": { "caption": "Beach day, cold drinks" } },
+        { "type": "image", "settings": { "caption": "Trailhead, packed and ready" } },
+        { "type": "image", "settings": { "caption": "Campsite golden hour" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

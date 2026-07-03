@@ -1,0 +1,331 @@
+/* Rove product page — hero, accordions, why-Rove, lifestyle, reviews. */
+
+/* ---------- Hero (Dawn's native .product markup, restyled) ---------- */
+
+.product {
+  gap: var(--rove-space-4);
+}
+
+.product__info-container > * + * {
+  margin-top: var(--rove-space-3);
+}
+
+.product__title h1,
+.product__title a {
+  font-family: var(--rove-font-sans);
+  font-weight: 800;
+  font-size: clamp(2.8rem, 2.2rem + 1.8vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.product .price {
+  font-family: var(--rove-font-sans);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.product .form__label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(var(--rove-ink), 0.7);
+}
+
+.product .product-form__input--pill .button {
+  font-weight: 600;
+}
+
+.product-form__buttons .product-form__submit {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+/* Accordions — quiet dividers, generous tap targets, no card chrome. */
+.product__accordion.accordion {
+  border-top: 1px solid var(--rove-border);
+  border-bottom: none;
+}
+
+.product__accordion.accordion:last-of-type {
+  border-bottom: 1px solid var(--rove-border);
+}
+
+.product__accordion .accordion__title {
+  font-family: var(--rove-font-sans);
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+.product__accordion .accordion__content.rte {
+  padding-bottom: 1.8rem;
+  color: rgba(var(--rove-ink), 0.78);
+  line-height: 1.6;
+}
+
+.product__accordion .accordion__content.rte p:first-child {
+  margin-top: 0;
+}
+
+/* ---------- Shared section scaffolding ---------- */
+
+.rove-section {
+  padding-block: var(--rove-space-5);
+}
+
+.rove-section__header {
+  margin-bottom: var(--rove-space-4);
+  max-width: 56rem;
+}
+
+.rove-section__heading-serif {
+  font-family: var(--rove-font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 2.2rem + 1.6vw, 4.2rem);
+  line-height: 1.08;
+  margin: 0.4rem 0 0;
+  color: rgb(var(--rove-ink));
+}
+
+/* ---------- Why Rove ---------- */
+
+.rove-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--rove-space-4) var(--rove-space-3);
+}
+
+@media screen and (max-width: 989px) {
+  .rove-why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rove-why__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rove-why__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.rove-why__icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  color: rgb(var(--rove-clay));
+}
+
+.rove-why__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rove-why__title {
+  font-family: var(--rove-font-sans);
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.rove-why__text {
+  font-size: 1.4rem;
+  line-height: 1.55;
+  color: rgba(var(--rove-ink), 0.72);
+  margin: 0;
+}
+
+/* ---------- Lifestyle band ---------- */
+
+.rove-lifestyle__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: repeat(2, minmax(16rem, 1fr));
+  gap: var(--rove-space-2);
+}
+
+.rove-lifestyle__grid > :first-child {
+  grid-row: span 2;
+}
+
+@media screen and (max-width: 749px) {
+  .rove-lifestyle__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .rove-lifestyle__grid > :first-child {
+    grid-row: auto;
+  }
+}
+
+.rove-lifestyle__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+
+.rove-lifestyle__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rove-lifestyle__placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(var(--rove-canvas-alt));
+  color: rgba(var(--rove-ink), 0.28);
+}
+
+.rove-lifestyle__placeholder svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.rove-lifestyle__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Reviews ---------- */
+
+.rove-reviews__summary {
+  display: flex;
+  gap: var(--rove-space-4);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--rove-space-4);
+  padding-bottom: var(--rove-space-4);
+  border-bottom: 1px solid var(--rove-border);
+}
+
+.rove-reviews__score {
+  font-family: var(--rove-font-sans);
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 1;
+  color: rgb(var(--rove-ink));
+}
+
+.rove-reviews__score-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rove-stars {
+  color: rgb(var(--rove-clay));
+  letter-spacing: 0.15em;
+  font-size: 1.6rem;
+}
+
+.rove-reviews__count {
+  font-size: 1.3rem;
+  color: rgba(var(--rove-ink), 0.65);
+}
+
+.rove-reviews__bars {
+  flex: 1;
+  min-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rove-reviews__bar-row {
+  display: grid;
+  grid-template-columns: 4rem 1fr 3rem;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: rgba(var(--rove-ink), 0.7);
+}
+
+.rove-reviews__bar-track {
+  height: 0.6rem;
+  border-radius: var(--rove-radius-pill);
+  background: rgba(var(--rove-ink), 0.1);
+  overflow: hidden;
+}
+
+.rove-reviews__bar-fill {
+  height: 100%;
+  background: rgb(var(--rove-clay));
+  border-radius: var(--rove-radius-pill);
+}
+
+.rove-reviews__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--rove-space-3);
+}
+
+@media screen and (max-width: 989px) {
+  .rove-reviews__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rove-review {
+  padding: var(--rove-space-3);
+  background: rgb(var(--rove-canvas-alt));
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rove-review__stars {
+  color: rgb(var(--rove-clay));
+  font-size: 1.4rem;
+}
+
+.rove-review__body {
+  font-size: 1.4rem;
+  line-height: 1.55;
+  color: rgba(var(--rove-ink), 0.85);
+  margin: 0;
+}
+
+.rove-review__author {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgb(var(--rove-ink));
+}
+
+.rove-review__verified {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(var(--rove-forest));
+}
+
+.rove-reviews__note {
+  margin-top: var(--rove-space-3);
+  font-size: 1.2rem;
+  color: rgba(var(--rove-ink), 0.5);
+}

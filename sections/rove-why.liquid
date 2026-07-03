@@ -1,0 +1,86 @@
+<div class="rove-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="rove-page-width">
+    <div class="rove-section__header">
+      <span class="rove-waypoint__label">{{ section.settings.waypoint_label | escape }}</span>
+      <span class="rove-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      <h2 class="rove-section-heading">{{ section.settings.heading | escape }}</h2>
+    </div>
+
+    <div class="rove-why__grid">
+      {%- for block in section.blocks -%}
+        <div class="rove-why__item" {{ block.shopify_attributes }}>
+          <div class="rove-why__icon" aria-hidden="true">
+            {%- case block.settings.icon -%}
+              {%- when 'cold' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11M8 3.5 12 6l4-2.5M8 20.5 12 18l4 2.5M2 9l3 3-3 3M22 9l-3 3 3 3"/></svg>
+              {%- when 'leakproof' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c3.5 4 7 8.2 7 12.2a7 7 0 1 1-14 0c0-4 3.5-8.2 7-12.2Z"/><path d="M9 15.5a3 3 0 0 0 3 3"/></svg>
+              {%- when 'hands-free' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V10.5a2.5 2.5 0 0 1 5 0v5"/><path d="M11 15V8.5a2.5 2.5 0 0 1 5 0V15"/><path d="M16 15v-3.5a2.5 2.5 0 0 1 5 0V16a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6"/></svg>
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3Z"/></svg>
+            {%- endcase -%}
+          </div>
+          <h3 class="rove-why__title">{{ block.settings.title | escape }}</h3>
+          <p class="rove-why__text">{{ block.settings.text | escape }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Rove: Why Rove",
+  "class": "rove-why-section",
+  "settings": [
+    { "type": "text", "id": "waypoint_label", "label": "Waypoint label", "default": "Gear Check" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Why Rove" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built for the day you actually have planned" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "cold", "options": [
+          { "value": "cold", "label": "All-day cold" },
+          { "value": "leakproof", "label": "Leakproof" },
+          { "value": "hands-free", "label": "Hands-free" },
+          { "value": "durable", "label": "Built to last" }
+        ]},
+        { "type": "text", "id": "title", "label": "Title", "default": "All-Day Cold" },
+        { "type": "textarea", "id": "text", "label": "Supporting text", "default": "Insulated to keep drinks cold from the first stop to the last, even on a hot day out." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rove: Why Rove",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "cold", "title": "All-Day Cold", "text": "Insulated to keep drinks cold from the first stop to the last, even on a hot day out." } },
+        { "type": "benefit", "settings": { "icon": "leakproof", "title": "Leakproof Liner", "text": "A sealed, verified leakproof liner — melted ice stays in the bag, not in your car." } },
+        { "type": "benefit", "settings": { "icon": "hands-free", "title": "Hands-Free Carry", "text": "Wear it like a backpack so your hands stay free for kids, dogs, or the trail ahead." } },
+        { "type": "benefit", "settings": { "icon": "durable", "title": "Built to Last", "text": "Durable materials and stitching made for repeat trips, not a single weekend." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

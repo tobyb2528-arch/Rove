@@ -1,0 +1,140 @@
+{%- liquid
+  assign total = section.blocks.size
+  assign sum = 0
+  assign count_5 = 0
+  assign count_4 = 0
+  assign count_3 = 0
+  assign count_2 = 0
+  assign count_1 = 0
+  for block in section.blocks
+    assign sum = sum | plus: block.settings.rating
+    case block.settings.rating
+      when 5
+        assign count_5 = count_5 | plus: 1
+      when 4
+        assign count_4 = count_4 | plus: 1
+      when 3
+        assign count_3 = count_3 | plus: 1
+      when 2
+        assign count_2 = count_2 | plus: 1
+      when 1
+        assign count_1 = count_1 | plus: 1
+    endcase
+  endfor
+  if total > 0
+    assign average = sum | times: 1.0 | divided_by: total
+    assign average_rounded = average | round: 1
+  else
+    assign average_rounded = 0
+  endif
+-%}
+
+<div class="rove-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="rove-page-width">
+    <div class="rove-section__header">
+      <span class="rove-waypoint__label">{{ section.settings.waypoint_label | escape }}</span>
+      <span class="rove-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      <h2 class="rove-section-heading">{{ section.settings.heading | escape }}</h2>
+    </div>
+
+    {%- if total > 0 -%}
+      <div class="rove-reviews__summary">
+        <div class="rove-reviews__score">{{ average_rounded }}</div>
+        <div class="rove-reviews__score-meta">
+          <span class="rove-stars" aria-hidden="true">
+            {%- for i in (1..5) -%}{% if i <= average_rounded %}★{% else %}☆{% endif %}{%- endfor -%}
+          </span>
+          <span class="rove-reviews__count">{{ total }} review{% if total != 1 %}s{% endif %}</span>
+        </div>
+        <div class="rove-reviews__bars">
+          {%- assign bar_data = '5,' | append: count_5 | append: '|4,' | append: count_4 | append: '|3,' | append: count_3 | append: '|2,' | append: count_2 | append: '|1,' | append: count_1 -%}
+          {%- assign bar_rows = bar_data | split: '|' -%}
+          {%- for row in bar_rows -%}
+            {%- assign parts = row | split: ',' -%}
+            {%- assign star_n = parts[0] -%}
+            {%- assign star_count = parts[1] | plus: 0 -%}
+            {%- assign star_pct = 0 -%}
+            {%- if total > 0 -%}{%- assign star_pct = star_count | times: 100 | divided_by: total -%}{%- endif -%}
+            <div class="rove-reviews__bar-row">
+              <span>{{ star_n }} star</span>
+              <span class="rove-reviews__bar-track"><span class="rove-reviews__bar-fill" style="width: {{ star_pct }}%;"></span></span>
+              <span>{{ star_count }}</span>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="rove-reviews__list">
+        {%- for block in section.blocks -%}
+          <div class="rove-review" {{ block.shopify_attributes }}>
+            <span class="rove-review__stars" aria-hidden="true">
+              {%- for i in (1..5) -%}{% if i <= block.settings.rating %}★{% else %}☆{% endif %}{%- endfor -%}
+            </span>
+            <p class="rove-review__body">{{ block.settings.body | escape }}</p>
+            <div>
+              <div class="rove-review__author">{{ block.settings.author | escape }}</div>
+              {%- if block.settings.verified -%}
+                <div class="rove-review__verified">Verified buyer</div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if request.design_mode -%}
+      <p class="rove-reviews__note">Editor preview only: the reviews above are sample placeholders. Replace every block with a genuine customer review — or connect a reviews app — before this section goes live. Never present placeholder reviews as real.</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Rove: Reviews",
+  "class": "rove-reviews-section",
+  "settings": [
+    { "type": "text", "id": "waypoint_label", "label": "Waypoint label", "default": "Base Camp" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "From the trail" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What Weekend Adventurers are saying" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "body", "label": "Review text", "default": "Sample review copy — replace with a genuine, verified customer review before launch." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Sample Customer" },
+        { "type": "checkbox", "id": "verified", "label": "Show \"Verified buyer\"", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rove: Reviews",
+      "blocks": [
+        { "type": "review" },
+        { "type": "review" },
+        { "type": "review" }
+      ]
+    }
+  ]
+}
+{% endschema %}

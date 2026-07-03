@@ -1,0 +1,46 @@
+/* Rove header, footer and trust-strip polish, layered on top of Dawn's native markup. */
+
+/* Wordmark — shop.name rendered as a confident, letter-spaced text logo. */
+.header__heading-link .h2 {
+  font-family: var(--rove-font-sans);
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgb(var(--rove-forest));
+}
+
+.header {
+  border-bottom: 1px solid var(--rove-border);
+}
+
+.header__inline-menu .header__menu-item {
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+}
+
+/* Trust strip (announcement bar) */
+.utility-bar .announcement-bar__message {
+  font-family: var(--rove-font-sans);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--rove-border);
+}
+
+.footer-block__heading {
+  font-family: var(--rove-font-sans);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-block__details-content a {
+  font-size: 1.4rem;
+}
