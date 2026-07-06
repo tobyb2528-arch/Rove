@@ -65,7 +65,7 @@
         "shipping_accordion": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"product__accordion accordion\"><details><summary><div class=\"summary__title\">{% render 'icon-accordion', icon: 'truck' %}<h2 class=\"h4 accordion__title inline-richtext\">Shipping</h2></div>{{ 'icon-caret.svg' | inline_asset_content }}</summary><div class=\"accordion__content rte\"><p>Orders are dispatched within 1–3 business days. UK delivery typically takes 3–7 business days from dispatch. You'll get a tracking link by email as soon as your order ships. Free UK delivery on orders over £40.</p></div></details></div>"
+            "custom_liquid": "<div class=\"product__accordion accordion\"><details><summary><div class=\"summary__title\">{% render 'icon-accordion', icon: 'truck' %}<h2 class=\"h4 accordion__title inline-richtext\">Shipping</h2></div>{{ 'icon-caret.svg' | inline_asset_content }}</summary><div class=\"accordion__content rte\"><p>Orders are dispatched within 1–3 business days. UK delivery typically takes 3–7 business days from dispatch. You'll get a tracking link by email as soon as your order ships.</p></div></details></div>"
           }
         },
         "returns_accordion": {
