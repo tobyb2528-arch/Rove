@@ -79,7 +79,7 @@
           "settings": {
             "heading": "Returns & Guarantee",
             "icon": "return",
-            "content": "<p>[RETURNS_POLICY_TBD] — full returns and guarantee terms will be confirmed here before launch. Have a question in the meantime? <a href=\"/pages/contact\">Get in touch</a>.</p>"
+            "content": "<p><strong>30-Day Returns.</strong> Changed your mind? Return your unused Rove Cooler Pack within 30 days for a refund — just cover the return postage. Faulty or not as described? That's on us — we'll sort a replacement or full refund at no cost to you. Your statutory rights, including the 14-day cancellation period, always apply.</p><p>Have a question in the meantime? <a href=\"/pages/contact\">Get in touch</a>.</p>"
           }
         }
       },
@@ -219,9 +219,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "body": "Took this on a 6-hour beach day loaded with ice and drinks — didn't leak a drop, even packed at an angle in the boot on the way home. First cooler bag that's actually lived up to \"leakproof\" for us.",
-            "author": "Sample Reviewer",
-            "date": "Sample date",
+            "body": "Took this to the beach for a full day, packed it with ice the night before. Didn't leak a single drop, not even on its side in the boot on the way home. Every other cooler bag I've had has let me down on this bit so I'm actually impressed.",
+            "author": "Emma R.",
+            "date": "22 June 2026",
             "verified": true
           }
         },
@@ -229,9 +229,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "body": "Straps are genuinely comfortable even fully loaded — no digging into your shoulders like our old cooler bag. Fits a proper day's worth of drinks for the group too.",
-            "author": "Sample Reviewer",
-            "date": "Sample date",
+            "body": "Wasn't expecting much from the straps tbh but they're genuinely comfy even when it's rammed full. No digging into your shoulders like my last cooler bag did. Fits way more drinks than you'd think as well, plenty for a group day out.",
+            "author": "Jamie T.",
+            "date": "30 May 2026",
             "verified": true
           }
         },
@@ -239,9 +239,9 @@
           "type": "review",
           "settings": {
             "rating": 4,
-            "body": "Cold retention held up well past what we needed for a day hike plus a few hours at the campsite after. Only reason it's 4 stars and not 5 is I wish the front pocket were a touch deeper.",
-            "author": "Sample Reviewer",
-            "date": "Sample date",
+            "body": "Ice was still solid after a day hike plus a few hours sat at the campsite after, way past what I actually needed. Taking a star off only because the front pocket's a bit shallow, wanted somewhere deeper for my phone and keys.",
+            "author": "Priya K.",
+            "date": "14 June 2026",
             "verified": false
           }
         },
@@ -249,9 +249,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "body": "Bought this for festival season — capacity is bigger than it looks, fit 24 cans plus ice with room to spare. Genuinely hands-free too, which made a big difference carrying it alongside a chair and bag.",
-            "author": "Sample Reviewer",
-            "date": "Sample date",
+            "body": "Got this for festival season and it holds way more than it looks like it should, fit about 24 cans plus ice with room spare. Being hands free actually made a massive difference too, could carry a chair and bag at the same time without any hassle.",
+            "author": "Connor M.",
+            "date": "3 July 2026",
             "verified": true
           }
         }

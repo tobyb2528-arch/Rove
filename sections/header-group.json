@@ -17,24 +17,16 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Free UK delivery over £40 · 30-day returns",
-            "link": ""
-          }
-        },
-        "announcement-bar-1": {
-          "type": "announcement",
-          "settings": {
-            "text": "Verified leakproof · Built for all-day adventures",
+            "text": "Free UK delivery",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "announcement-bar-1"
+        "announcement-bar-0"
       ],
       "settings": {
-        "auto_rotate": true,
+        "auto_rotate": false,
         "change_slides_speed": 5,
         "color_scheme": "scheme-4",
         "show_line_separator": true,
