@@ -1,0 +1,39 @@
+{% comment %}
+  "Complete the set" bundle nudge for upsell product pages (ice packs, bottle,
+  blanket). Points to the future Rove Day Out Kit bundle once it exists as a
+  real Shopify product — upsell.md doesn't have a handle for it yet (unlike
+  the three individual products), so until one is set this renders as a
+  static callout rather than guessing a link that would 404.
+
+  To activate the link: set `rove_bundle_handle` below to the bundle
+  product's real Shopify handle once it's created in Shopify.
+
+  Usage:
+  {% render 'rove-bundle-nudge' %}
+{% endcomment %}
+
+{{ 'rove-upsell-product.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign rove_bundle_handle = ''
+  assign rove_bundle_product = all_products[rove_bundle_handle]
+-%}
+
+{%- if rove_bundle_product != blank and rove_bundle_product.id != blank -%}
+  <a href="{{ rove_bundle_product.url }}" class="rove-bundle-nudge">
+{%- else -%}
+  <!-- ROVE: Day Out Kit bundle product not created in Shopify yet — set rove_bundle_handle in snippets/rove-bundle-nudge.liquid to turn this into a link -->
+  <div class="rove-bundle-nudge rove-bundle-nudge--static">
+{%- endif -%}
+
+  <span class="rove-bundle-nudge__eyebrow">Complete the set</span>
+  <span class="rove-bundle-nudge__heading">The Rove Day Out Kit</span>
+  <span class="rove-bundle-nudge__text">
+    Cooler, ice packs and blanket together for ~£57.99 — a genuine saving on ~£65.97 bought separately.
+  </span>
+
+{%- if rove_bundle_product != blank and rove_bundle_product.id != blank -%}
+  </a>
+{%- else -%}
+  </div>
+{%- endif -%}

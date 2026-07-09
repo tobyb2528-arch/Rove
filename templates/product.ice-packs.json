@@ -1,0 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "benefit_line": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"rove-benefit-line\">Reusable gel ice packs, set of 4. Keep drinks cold for hours, no melty mess.</p>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"rte rove-product-copy\"><p class=\"rove-product-tagline\">Rove Ice Packs — Keep It Cold, Longer</p><p>The easiest way to get more hours out of your cooler. Freeze them overnight, drop them in, and they keep your drinks and food properly cold long after loose ice has melted into a puddle at the bottom.</p><p><strong>A set of four, ready when you are.</strong> Four reusable gel blocks give you enough to pack out a full cooler or split across a cool bag and a lunch box. Freeze what you need, keep the rest on standby.</p><p><strong>Made to last the day.</strong> Filled with a long-hold cooling gel that stays colder for longer than ice and won't leave everything swimming in melt-water. Your snacks stay dry, your drinks stay cold, and there's no soggy mess to pour out later.</p><p><strong>Freeze, use, refreeze — forever.</strong> Fully reusable: pop them in the freezer, use them, and refreeze as many times as you like. No buying bags of ice every time you head out.</p><p><strong>Fits your cooler and more.</strong> Flat, stackable blocks that lay neatly against your drinks and food in a cooler backpack, lunch box, or picnic bag — and keep the shopping cold on the drive home too. Made to pair with the <a href=\"{{ all_products['the-rove-cooler-pack-insulated-30-can-backpack-cooler-leakproof-hands-free'].url }}\">Rove Cooler Pack</a> — freeze a set and you'll get even more cold hours out of it.</p><p><strong>Clean and hassle-free.</strong> Sealed, leakproof, and easy to wipe down, so they're ready to go again next time.</p><p><strong>Key features:</strong></p><ul><li>Set of 4 reusable gel freezer blocks</li><li>Long-hold cooling gel stays colder for longer than ice</li><li>Fully reusable</li><li>Leakproof, sealed design keeps food dry</li><li>Flat, stackable shape</li><li>Easy to wipe clean</li></ul></div>"
+          }
+        },
+        "bundle_nudge": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'rove-bundle-nudge' %}"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "benefit_line",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "bundle_nudge"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

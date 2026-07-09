@@ -1,0 +1,74 @@
+/* Rove upsell product pages (ice packs, bottle, blanket) — shared styling for
+   the lighter, secondary product-page treatment: a short in-copy tagline,
+   the product description body, and the "Complete the set" bundle nudge.
+   Reuses main-product's existing markup/classes (already loaded globally via
+   rove-product.css) — this file only adds the few pieces that are new here. */
+
+.rove-product-tagline {
+  font-family: var(--rove-font-display);
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 1.3;
+  color: rgb(var(--rove-forest));
+  margin: 0 0 1.2rem;
+}
+
+.rove-product-copy p {
+  color: rgba(var(--rove-ink), 0.82);
+}
+
+.rove-product-copy a {
+  color: rgb(var(--rove-forest));
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.rove-product-copy ul {
+  margin-top: 0.6rem;
+}
+
+.rove-bundle-nudge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.8rem 2rem;
+  background: rgb(var(--rove-canvas-alt));
+  border-left: 3px solid rgb(var(--rove-clay));
+  border-radius: 0.4rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.rove-bundle-nudge {
+  transition: background-color 0.15s ease;
+}
+
+a.rove-bundle-nudge:hover {
+  background: rgba(var(--rove-clay), 0.14);
+}
+
+.rove-bundle-nudge--static {
+  cursor: default;
+}
+
+.rove-bundle-nudge__eyebrow {
+  font-family: var(--rove-font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--rove-clay));
+}
+
+.rove-bundle-nudge__heading {
+  font-family: var(--rove-font-display);
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: rgb(var(--rove-ink));
+}
+
+.rove-bundle-nudge__text {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: rgba(var(--rove-ink), 0.78);
+}
