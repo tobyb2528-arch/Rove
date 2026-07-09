@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "benefit_line": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"rove-benefit-line\">Large waterproof blanket. Dry ground for beach, park, festivals and camping.</p>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"rte rove-product-copy\"><p class=\"rove-product-tagline\">The Rove Picnic Blanket — Dry Ground, Sorted</p><p>Damp grass, wet sand, muddy festival fields — the ground's never as dry as you'd like. This waterproof blanket gives you a clean, dry place to sit wherever the day takes you, then packs down small enough to disappear into your bag.</p><p><strong>Genuinely waterproof, not just water-resistant.</strong> The closed-foam PVC backing blocks moisture coming up from below, so you stay dry even on damp grass or sand. Spills wipe straight off the top, and sand and dirt shake right off.</p><p><strong>Big enough to actually spread out.</strong> At 200 x 210cm, there's proper room for two or three people, plus space for the cooler, snacks, and bags. Spread it out, set the <a href=\"{{ all_products['the-rove-cooler-pack-insulated-30-can-backpack-cooler-leakproof-hands-free'].url }}\">Rove Cooler Pack</a> down, and you've got the makings of a proper day out.</p><p><strong>Folds away to nothing.</strong> Packs down to roughly 20 x 20 x 10cm and weighs about 350g, so it slips into a backpack, tucks into your cooler, or lives in the boot ready for the next spontaneous day out.</p><p><strong>Key features:</strong></p><ul><li>Large 200 x 210cm (2-3 people plus gear)</li><li>Fully waterproof closed-foam PVC backing</li><li>Wipe-clean top; sand shakes off</li><li>Folds to approx. 20 x 20 x 10cm, ~350g</li><li>Lightweight and packable</li></ul></div>"
+          }
+        },
+        "bundle_nudge": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'rove-bundle-nudge' %}"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "benefit_line",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "bundle_nudge"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
