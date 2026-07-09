@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "benefit_line": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"rove-benefit-line\">Insulated stainless steel bottle. Keeps drinks cold up to 12 hours.</p>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"rte rove-product-copy\"><p class=\"rove-product-tagline\">The Rove Flask — Cold Drinks That Stay Cold</p><p>Fill it, seal it, and your drink stays properly cold for hours — whether it's sat in the sun at the beach, rattling round in your bag on a hike, or on your desk all afternoon.</p><p><strong>All-day temperature control.</strong> Double-wall vacuum insulation keeps cold drinks cold for 6-12 hours and hot drinks hot for up to 12 — so your water's still icy at the top of the trail and your coffee's still warm on the early start.</p><p><strong>Built from proper materials.</strong> Made from durable 304 stainless steel that won't rust, won't hold onto flavours, and shrugs off the odd knock. No plastic aftertaste, no lining to wear out.</p><p><strong>Sip without the faff.</strong> The straw lid lets you drink one-handed on the move — driving, walking, mid-workout — without unscrewing anything. Leak-resistant seal keeps it in the bottle, not in your bag.</p><p><strong>Sized for real days out.</strong> Choose 600ml for everyday carry or 750ml when you need more to get you through a long one. Made to pair with the <a href=\"{{ all_products['the-rove-cooler-pack-insulated-30-can-backpack-cooler-leakproof-hands-free'].url }}\">Rove Cooler Pack</a> — cold drinks from the cooler, cold all day in the flask.</p><p><strong>Key features:</strong></p><ul><li>Keeps drinks cold 6-12 hours, hot up to 12</li><li>Durable 304 stainless steel</li><li>One-handed straw lid with leak-resistant seal</li><li>600ml or 750ml</li><li>Lightweight and knock-resistant</li></ul></div>"
+          }
+        },
+        "bundle_nudge": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'rove-bundle-nudge' %}"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "benefit_line",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "bundle_nudge"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
