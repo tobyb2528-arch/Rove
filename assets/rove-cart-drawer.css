@@ -1,0 +1,55 @@
+/* Rove cart drawer — scroll-region fix.
+
+   Dawn's default drawer gives only <cart-drawer-items> its own scrollbar
+   (flex: 1; overflow: auto) while .drawer__footer sits below it as a plain,
+   non-scrolling block sized to its own content. That works for Dawn's small
+   default footer (note toggle + totals + checkout button), but once the
+   "Complete your day out" upsell is added below the checkout button, the
+   footer's natural content height can exceed the drawer's fixed height.
+   Because .drawer__inner has overflow: hidden, and a flex item with
+   overflow: auto is allowed to shrink to 0 (its automatic minimum size is
+   overridden to 0 per the flexbox spec), the practical effect was: the line
+   items got squeezed toward zero height, and the footer/upsell content that
+   didn't fit was clipped off with no way to scroll to it.
+
+   Fix: line items, the checkout footer, and the upsell all move inside one
+   shared scroll region (.rove-drawer-scroll) so the whole thing scrolls
+   together as a unit. Only .drawer__header stays outside it, pinned. */
+
+cart-drawer .rove-drawer-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+}
+
+cart-drawer cart-drawer-items {
+  flex: none;
+  overflow: visible;
+}
+
+cart-drawer .drawer__footer {
+  flex: none;
+  overflow: visible;
+}
+
+cart-drawer .rove-cart-upsell-wrapper {
+  padding-bottom: var(--rove-space-2);
+}
+
+cart-drawer .rove-drawer-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+cart-drawer .rove-drawer-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--rove-ink), 0.3);
+  border-radius: 100px;
+}
+
+/* Dawn's short-viewport fallback (max-height: 650px) toggled overflow on
+   .drawer__inner and cart-drawer-items directly; now that scrolling lives on
+   .rove-drawer-scroll at every viewport height, that fallback is redundant
+   but harmless — leave it as-is in component-cart-drawer.css. */

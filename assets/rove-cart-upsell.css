@@ -141,3 +141,26 @@
   width: 1.4rem;
   height: 1.4rem;
 }
+
+/* The cart drawer is a fixed ~40rem-wide panel regardless of the browser's
+   actual viewport width, so the `min-width: 750px` rules above (correct for
+   the full-width /cart page) would otherwise force the spacious desktop
+   layout — a 3-column grid with 15rem-tall images — into that narrow panel
+   on any normal desktop screen. These selectors are more specific than the
+   plain classes above, so they always win inside the drawer and keep the
+   compact, single-column horizontal card regardless of screen size. */
+cart-drawer .rove-cart-upsell__grid {
+  grid-template-columns: 1fr;
+  gap: var(--rove-space-2);
+}
+
+cart-drawer .rove-upsell-card {
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+}
+
+cart-drawer .rove-upsell-card__media {
+  width: 7rem;
+  height: 7rem;
+}

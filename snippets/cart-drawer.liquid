@@ -7,6 +7,7 @@
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'rove-cart-drawer.css' | asset_url | stylesheet_tag }}
 {{ 'rove-cart-upsell.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
@@ -76,6 +77,7 @@
           </span>
         </button>
       </div>
+      <div class="rove-drawer-scroll">
       <cart-drawer-items
         view-event-payload="{{ cart | standard_event_data: 'view', context: 'dialog' | escape }}"
         view-event-trigger="manual"
@@ -590,10 +592,11 @@
             {{ 'sections.cart.checkout' | t }}
           </button>
         </div>
+      </div>
 
-        <div class="rove-cart-upsell-wrapper">
-          {%- render 'rove-cart-upsell' -%}
-        </div>
+      <div class="rove-cart-upsell-wrapper">
+        {%- render 'rove-cart-upsell' -%}
+      </div>
       </div>
     </div>
   </div>
