@@ -7,9 +7,11 @@
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'rove-cart-upsell.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 <style>
   .drawer {
@@ -587,6 +589,10 @@
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
+        </div>
+
+        <div class="rove-cart-upsell-wrapper">
+          {%- render 'rove-cart-upsell' -%}
         </div>
       </div>
     </div>

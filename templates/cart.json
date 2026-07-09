@@ -40,10 +40,19 @@
         "subtotal",
         "buttons"
       ]
+    },
+    "cart-upsell": {
+      "type": "rove-cart-upsell",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "cart-items",
-    "cart-footer"
+    "cart-footer",
+    "cart-upsell"
   ]
 }

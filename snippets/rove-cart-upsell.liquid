@@ -1,0 +1,72 @@
+{% comment %}
+  Renders the "Complete your day out" cart upsell — compact cards for Rove's
+  supporting products, pulled live from Shopify by handle. A product is skipped
+  if it's already in the cart, and the whole block is hidden if nothing is left
+  to offer (or if the cart is empty).
+
+  To change which products appear: edit the `rove_upsell_handles` list below.
+  Handles must match real Shopify products (see upsell.md) — an unresolved
+  handle is skipped and flagged with an HTML comment rather than guessed.
+
+  To swap in a bundle (e.g. a future "Day Out Kit"): add its handle to this
+  list like any other product. Since Shopify treats a bundle as its own
+  product, it renders through the same card + rove-buy-form as everything
+  else — no extra code needed.
+
+  Accepts:
+  - section_id: {String} id of the wrapping section (optional). Pass this when
+    rendering inside a JSON-templated section (e.g. the cart page) so this
+    block and the cart footer can refresh themselves after an add. Omit when
+    rendering inside the cart drawer snippet, where Dawn's own drawer
+    re-render already covers this.
+
+  Usage:
+  {% render 'rove-cart-upsell', section_id: section.id %}
+{% endcomment %}
+
+{%- if cart != empty -%}
+  {%- liquid
+    assign rove_upsell_handles = '4pcs-ice-packs-reusable-gel-freezer-ice-blocks-for-air-conditioner-fan-cooler-pack-water-injection-picnic-travel-food-storage,600-750ml-thermos-bottle-with-straw-stainless-steel-car-thermal-cup-sports-water-bottles-keeps-cold-and-heat-thermal-mug,200-210-waterproof-pocket-beach-blanket-folding-camping-mat-mattress-portable-lightweight-mat-outdoor-picnic-mat-sand-beach-mat' | split: ','
+    assign rove_upsell_visible_count = 0
+  -%}
+
+  {%- capture rove_upsell_cards -%}
+    {%- for handle in rove_upsell_handles -%}
+      {%- assign upsell_product = all_products[handle] -%}
+      {%- if upsell_product == blank or upsell_product.id == blank -%}
+        <!-- ROVE UPSELL: handle "{{ handle }}" did not resolve to a Shopify product — check upsell.md -->
+      {%- else -%}
+        {%- assign already_in_cart = false -%}
+        {%- for item in cart.items -%}
+          {%- if item.product.id == upsell_product.id -%}
+            {%- assign already_in_cart = true -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- unless already_in_cart -%}
+          {%- assign rove_upsell_visible_count = rove_upsell_visible_count | plus: 1 -%}
+          {%- render 'rove-upsell-card', product: upsell_product -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- if rove_upsell_visible_count > 0 -%}
+    <rove-cart-upsell
+      class="rove-cart-upsell"
+      {% if section_id %}
+        data-section-id="{{ section_id }}"
+      {% endif %}
+    >
+      <div class="rove-cart-upsell__inner">
+        <p class="rove-eyebrow">More for the day</p>
+        <h2 class="rove-cart-upsell__heading">Complete your day out</h2>
+
+        <div class="rove-cart-upsell__grid">
+          {{ rove_upsell_cards }}
+        </div>
+      </div>
+    </rove-cart-upsell>
+  {%- endif -%}
+{%- endif -%}

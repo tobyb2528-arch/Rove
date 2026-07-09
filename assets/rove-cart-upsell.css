@@ -1,0 +1,143 @@
+/* Rove cart upsell — "Complete your day out" cross-sell cards.
+   Secondary by design: sits below the checkout CTA, uses the button--secondary
+   style so it never competes with the primary checkout button. */
+
+.rove-cart-upsell {
+  display: block;
+}
+
+.rove-cart-upsell-wrapper {
+  margin-top: var(--rove-space-3);
+}
+
+.rove-cart-upsell__inner {
+  border-top: 1px solid var(--rove-border);
+  padding-top: var(--rove-space-3);
+}
+
+.rove-cart-upsell .rove-eyebrow {
+  margin-bottom: 0.6rem;
+}
+
+.rove-cart-upsell__heading {
+  font-family: var(--rove-font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: rgb(var(--rove-ink));
+  margin: 0 0 var(--rove-space-3);
+}
+
+.rove-cart-upsell__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--rove-space-2);
+}
+
+@media screen and (min-width: 750px) {
+  .rove-cart-upsell__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--rove-space-3);
+  }
+}
+
+.rove-upsell-card {
+  display: flex;
+  align-items: center;
+  gap: var(--rove-space-2);
+  padding: var(--rove-space-2);
+  background: rgb(var(--rove-canvas-alt));
+  border-radius: 0.8rem;
+}
+
+@media screen and (min-width: 750px) {
+  .rove-upsell-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+}
+
+.rove-upsell-card__media {
+  flex: none;
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background: rgba(var(--rove-ink), 0.05);
+}
+
+@media screen and (min-width: 750px) {
+  .rove-upsell-card__media {
+    width: 100%;
+    height: 15rem;
+  }
+}
+
+.rove-upsell-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rove-upsell-card__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rove-upsell-card__name {
+  display: block;
+  font-family: var(--rove-font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: rgb(var(--rove-ink));
+  text-decoration: none;
+}
+
+.rove-upsell-card__name:hover {
+  text-decoration: underline;
+}
+
+.rove-upsell-card__price {
+  margin: 0.3rem 0 1rem;
+  font-size: 1.35rem;
+  color: rgba(var(--rove-ink), 0.7);
+}
+
+.rove-buy-form {
+  display: block;
+}
+
+.rove-buy-form__form {
+  margin: 0;
+}
+
+.rove-buy-form__submit {
+  width: 100%;
+  padding: 0.9rem 1.6rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rove-buy-form .product-form__error-message-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+  color: rgb(var(--rove-clay));
+}
+
+.rove-buy-form .product-form__error-message-wrapper[hidden] {
+  display: none;
+}
+
+.rove-buy-form .product-form__error-message-wrapper .svg-wrapper svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}

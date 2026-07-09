@@ -1,0 +1,65 @@
+{% comment %}
+  Renders a compact Dawn-native add-to-cart form for use outside the main product
+  page (e.g. cart upsell cards). Wraps Dawn's <product-form> custom element so
+  product-form.js drives the /cart/add.js request, cart-drawer/cart-notification
+  refresh, and PUB_SUB_EVENTS.cartUpdate exactly as it does on the product page —
+  no bespoke cart logic lives here.
+
+  Accepts:
+  - product: {Object} product to add (uses selected_or_first_available_variant)
+  - form_id: {String} unique id for the underlying {% form %} tag
+  - button_label: {String} button text (optional, defaults to "Add")
+  - button_aria_label: {String} accessible label (optional, defaults to button_label)
+
+  Usage:
+  {% render 'rove-buy-form', product: product, form_id: 'rove-upsell-form-123' %}
+{% endcomment %}
+
+{%- assign variant = product.selected_or_first_available_variant -%}
+
+<product-form class="rove-buy-form">
+  <div class="product-form__error-message-wrapper" role="alert" hidden>
+    <span class="svg-wrapper">
+      {{- 'icon-error.svg' | inline_asset_content -}}
+    </span>
+    <span class="product-form__error-message"></span>
+  </div>
+
+  {%- form 'product',
+    product,
+    id: form_id,
+    class: 'rove-buy-form__form',
+    novalidate: 'novalidate',
+    data-type: 'add-to-cart-form'
+  -%}
+    <input
+      type="hidden"
+      name="id"
+      value="{{ variant.id }}"
+      {% if variant.available == false or variant == null %}
+        disabled
+      {% endif %}
+      class="product-variant-id"
+    >
+    <button
+      type="submit"
+      name="add"
+      class="button button--secondary rove-buy-form__submit"
+      aria-label="{{ button_aria_label | default: button_label | default: 'Add' | escape }}"
+      {% if variant.available == false or variant == null %}
+        disabled
+      {% endif %}
+    >
+      <span>
+        {%- if variant == null -%}
+          {{ 'products.product.unavailable' | t }}
+        {%- elsif variant.available == false -%}
+          {{ 'products.product.sold_out' | t }}
+        {%- else -%}
+          {{ button_label | default: 'Add' }}
+        {%- endif -%}
+      </span>
+      {%- render 'loading-spinner' -%}
+    </button>
+  {%- endform -%}
+</product-form>
