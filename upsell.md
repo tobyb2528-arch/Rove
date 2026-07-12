@@ -9,6 +9,7 @@ Companion to CLAUDE.md. Documents the products in the store and how Claude Code 
 ## Hero product (the store leads with this)
 
 **The Rove Cooler Pack** — insulated 30-can backpack cooler
+
 - Handle: `the-rove-cooler-pack-insulated-30-can-backpack-cooler-leakproof-hands-free`
 - Role: hero. Homepage focus, main product page, primary ads.
 - Price: £37.99
@@ -21,22 +22,24 @@ Companion to CLAUDE.md. Documents the products in the store and how Claude Code 
 These three exist to raise average order value. They appear in the cart upsell ("Complete your day out") and in the Day Out Kit bundle. They are secondary: they must never overshadow the cooler, crowd the checkout flow, or appear on the homepage as co-heroes.
 
 ### 1. Reusable Ice Packs (Set of 4)
+
 - Handle: `4pcs-ice-packs-reusable-gel-freezer-ice-blocks-for-air-conditioner-fan-cooler-pack-water-injection-picnic-travel-food-storage`
 - Role: **primary cart upsell.** Cheapest, highest-attach add-on.
 - Price: £8.99
 - Variant: single variant — set of 4, large flat blocks (18 x 11.5 x 3cm). No size dropdown.
-- One-line (for upsell card): "Reusable gel ice packs, set of 4. Keep drinks cold for hours, no melty mess."
+- One-line (for upsell card): "Reusable ice packs, set of 4. Fill, freeze, and keep drinks cold for hours — no melty mess."
 
 **Product page title:** Reusable Ice Packs (Set of 4) — Long-Lasting Freezer Blocks for Coolers
 
 **Product page description:**
+
 > **Rove Ice Packs — Keep It Cold, Longer**
 >
 > The easiest way to get more hours out of your cooler. Freeze them overnight, drop them in, and they keep your drinks and food properly cold long after loose ice has melted into a puddle at the bottom.
 >
-> **A set of four, ready when you are.** Four reusable gel blocks give you enough to pack out a full cooler or split across a cool bag and a lunch box. Freeze what you need, keep the rest on standby.
+> **A set of four, ready when you are.** Four reusable blocks give you enough to pack out a full cooler or split across a cool bag and a lunch box. Freeze what you need, keep the rest on standby.
 >
-> **Made to last the day.** Filled with a long-hold cooling gel that stays colder for longer than ice and won't leave everything swimming in melt-water. Your snacks stay dry, your drinks stay cold, and there's no soggy mess to pour out later.
+> **Made to last the day.** Fill them with water, freeze them overnight, and they hold cold far longer than loose ice — without leaving everything swimming in melt-water. Your snacks stay dry, your drinks stay cold, and there's no soggy mess to pour out later.
 >
 > **Freeze, use, refreeze — forever.** Fully reusable: pop them in the freezer, use them, and refreeze as many times as you like. No buying bags of ice every time you head out.
 >
@@ -44,11 +47,12 @@ These three exist to raise average order value. They appear in the cart upsell (
 >
 > **Clean and hassle-free.** Sealed, leakproof, and easy to wipe down, so they're ready to go again next time.
 >
-> Key features: Set of 4 reusable gel freezer blocks · Long-hold cooling gel stays colder for longer than ice · Fully reusable · Leakproof, sealed design keeps food dry · Flat, stackable shape · Easy to wipe clean.
+> Key features: Set of 4 reusable fill-and-freeze cooling blocks · Holds cold far longer than loose ice · Fully reusable · Leakproof, sealed design keeps food dry · Flat, stackable shape · Easy to wipe clean · Fill with water, freeze, and reuse indefinitely — nothing to run out of.
 
 **Subtle cooler link (weave into the description, e.g. after the "Fits your cooler" line):** "Made to pair with the Rove Cooler Pack — freeze a set and you'll get even more cold hours out of it." (link "Rove Cooler Pack" to the cooler product page.)
 
 ### 2. Insulated Bottle (stainless steel, straw lid)
+
 - Handle: `600-750ml-thermos-bottle-with-straw-stainless-steel-car-thermal-cup-sports-water-bottles-keeps-cold-and-heat-thermal-mug`
 - Role: cart upsell + optional bundle add-on.
 - Price: £16.99–19.99 (600ml) / £19.99–22.99 (750ml)
@@ -58,6 +62,7 @@ These three exist to raise average order value. They appear in the cart upsell (
 **Product page title:** Insulated Stainless Steel Bottle — Cold up to 12 Hours, 600/750ml
 
 **Product page description:**
+
 > **The Rove Flask — Cold Drinks That Stay Cold**
 >
 > Fill it, seal it, and your drink stays properly cold for hours — whether it's sat in the sun at the beach, rattling round in your bag on a hike, or on your desk all afternoon.
@@ -75,6 +80,7 @@ These three exist to raise average order value. They appear in the cart upsell (
 **Subtle cooler link (weave into the description):** "The perfect partner to the Rove Cooler Pack — cold drinks from the cooler, cold all day in the flask." (link "Rove Cooler Pack" to the cooler product page.)
 
 ### 3. Waterproof Picnic / Camping Blanket (200x210cm)
+
 - Handle: `200-210-waterproof-pocket-beach-blanket-folding-camping-mat-mattress-portable-lightweight-mat-outdoor-picnic-mat-sand-beach-mat`
 - Role: cart upsell + bundle component.
 - Price: £16.99–21.99
@@ -84,6 +90,7 @@ These three exist to raise average order value. They appear in the cart upsell (
 **Product page title:** Waterproof Picnic & Beach Blanket — 2-3 Person, Packs Down Small
 
 **Product page description:**
+
 > **The Rove Picnic Blanket — Dry Ground, Sorted**
 >
 > Damp grass, wet sand, muddy festival fields — the ground's never as dry as you'd like. This waterproof blanket gives you a clean, dry place to sit wherever the day takes you, then packs down small enough to disappear into your bag.
@@ -103,6 +110,7 @@ These three exist to raise average order value. They appear in the cart upsell (
 ## Bundle
 
 **The Rove Day Out Kit** = Cooler + Ice Packs (set of 4) + Blanket
+
 - Bundle price: ~£57.99 (a genuine saving vs. ~£65.97 bought separately).
 - Only show a "was" / "separately" price if it's the real sum of the individual prices — never a fabricated inflated RRP.
 
@@ -113,6 +121,7 @@ These three exist to raise average order value. They appear in the cart upsell (
 The three upsell products currently share the cooler's page content/layout — this is wrong and must be fixed. Each needs its OWN product page, using the title and description above.
 
 Requirements for each upsell product page:
+
 - **Use the product's own title, description, images, price, and variants** (above) — NOT the cooler's content. Each page must be unique to that product.
 - **Same visual style as the cooler page, but clearly secondary to the hero.** Reuse Rove's design language (tokens, fonts, cream base, rove- prefix) so it feels part of the brand — but it should read as a supporting product, not a second hero. Keep it cleaner / less elaborate than the cooler's flagship page (e.g. it doesn't need the full hero treatment, extensive lifestyle sections, or heavy review blocks the cooler has).
 - **Subtle cooler link in the description.** Weave in the one-line cooler mention shown for each product above, with "Rove Cooler Pack" hyperlinked to the cooler product page. Keep it natural and light — a hint, not a hard sell. No banner, no big cross-sell block; just the in-copy mention and link.
@@ -136,10 +145,12 @@ Do NOT modify the cooler (hero) product page while building these — only creat
 ---
 
 ## Open items
+
 - All four Shopify handles are now filled in. ✓
 - Confirm final bottle colours + exact on-brand hex values (palette still being finalised in CLAUDE.md).
 - Confirm real landed costs before locking prices.
 
 ## Store
+
 - Store URL: `autods-user-store-11860.myshopify.com`
 - Note: current supplier-style handles are long and keyword-stuffed (inherited from AutoDS import). They work fine for the upsell, but you may later want to shorten them in Shopify for cleaner URLs (e.g. `rove-ice-packs`). If you do, update the handles in this file to match.
